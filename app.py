@@ -54,7 +54,7 @@ def get_memory_usage():
     return process.memory_info().rss / 1024 / 1024  # Convert to MB
 
 # Chat interface
-st.title("LangChain OpenAI GPT-4 Chat Application")
+st.title("LangChain OpenAI GPT-4o-mini Chat Application")
 
 for message in st.session_state.memory.chat_memory.messages:
     with st.chat_message(message.type):
@@ -86,7 +86,7 @@ if user_input := st.chat_input("What is your message?"):
 
         # Display estimated token usage and memory usage
         st.write(f"Estimated token usage - Input: {input_tokens}, Output: {output_tokens}, Total: {input_tokens + output_tokens}")
-        st.write(f"Memory usage - Initial: {initial_memory:.2f} MB, Final: {final_memory:.2f} MB, Difference: {final_memory - initial_memory:.2f} MB")
+        # st.write(f"Memory usage - Initial: {initial_memory:.2f} MB, Final: {final_memory:.2f} MB, Difference: {final_memory - initial_memory:.2f} MB")
         st.write(f"Processing time: {end_time - start_time:.2f} seconds")
 
 # Print memory contents (for debugging)
